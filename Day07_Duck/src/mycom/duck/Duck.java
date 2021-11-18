@@ -29,8 +29,8 @@ public class Duck {
 	}
 	
 	public void display(Graphics g) {
-		Color c = new Color(0, 0, 0);
-		g.setColor(c);
+		//Color c = new Color(0, 0, 0);
+		//g.setColor(c);
 		g.fillOval(x, y, Duck.SIZE, SIZE); //변수의 소속을 명확히 밝혀서 가져온다.
 	}
 	

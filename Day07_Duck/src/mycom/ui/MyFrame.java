@@ -20,11 +20,11 @@ public class MyFrame extends JFrame {
 	
 	@Override
 	public void paint(Graphics g) {
-		
+		super.paint(g);
 		if(d!=null) {
-			Color c = new Color(255, 255, 255);
-			g.setColor(c);
-			g.fillRect(0, 0, FRAME_WIDTH, FRAME_HEIGHT);
+			//Color c = new Color(255, 255, 255);
+			//g.setColor(c);
+			//g.fillRect(0, 0, FRAME_WIDTH, FRAME_HEIGHT);
 			
 			d.display(g);
 			d.swim(g);
