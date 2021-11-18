@@ -2,15 +2,16 @@ package mycom.ui;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Random;
 
 import javax.swing.JFrame;
 import mycom.duck.*;
 
 public class MyFrame extends JFrame {
 	
-	public final int FRAME_WIDTH = 800;
-	public final int FRAME_HEIGHT = 600;
-	Duck d = new Duck();
+	public static final int FRAME_WIDTH = 800;
+	public static final int FRAME_HEIGHT = 600;
+	DuckManager dm = new DuckManager(10);
 
 	public MyFrame() {
 		super();
@@ -18,17 +19,45 @@ public class MyFrame extends JFrame {
 		this.setVisible(true);
 	}
 	
-	@Override
+	/*
+	public void makeDucks() {
+		Random rnd = new Random();
+		int rndDuck;
+		for(int i=0; i<d.length; i++) {
+			rndDuck = rnd.nextInt(2);
+			
+			switch(rndDuck) {
+			case 0:
+				//부모 = 자식; (자식 is a 부모)
+				//자식 = 부모; (부모 is a 자식) NO 틀린 명제
+				//형변환의 case
+				d[i] = new MallardDuck();
+				break;
+			case 1:
+				d[i] = new RedDuck();
+				break;
+			default:
+				d[i] = new MallardDuck();
+			}
+			/*
+			if(rndDuck == 0) {
+				d[i] = new MallardDuck();
+			}
+			else
+				d[i] = new RedDuck();
+			*/
+	//	}
+	//}
+	//*/
+	
+	
 	public void paint(Graphics g) {
 		super.paint(g);
-		if(d!=null) {
-			//Color c = new Color(255, 255, 255);
-			//g.setColor(c);
-			//g.fillRect(0, 0, FRAME_WIDTH, FRAME_HEIGHT);
-			
-			d.display(g);
-			d.swim(g);
-			d.quack(g);
+		if(dm!=null) {
+			dm.displayAllDucks(g);
+			dm.swimAllDucks(g);
+			dm.quackAllDucks(g);		
 		}
 	}
+	
 }

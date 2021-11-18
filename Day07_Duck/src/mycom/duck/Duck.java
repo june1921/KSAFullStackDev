@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
 
+import mycom.ui.MyFrame;
+
 public class Duck {
 	
 	//이하는 인스턴스 변수
@@ -18,8 +20,8 @@ public class Duck {
 	//메소드의 오버로딩, 다형성, 같은 이름의 메소드가 존재할수 있는 이유
 	public Duck() {
 		Random rnd = new Random();
-		x = rnd.nextInt(800);
-		y = rnd.nextInt(600);
+		x = rnd.nextInt(MyFrame.FRAME_WIDTH-100)+50; //50~749
+		y = rnd.nextInt(MyFrame.FRAME_HEIGHT-100)+70; //70~569
 	}
 	
 	public Duck(int x, int y) {
