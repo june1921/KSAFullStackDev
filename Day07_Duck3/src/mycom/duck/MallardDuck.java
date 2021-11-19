@@ -19,4 +19,8 @@ public class MallardDuck extends Duck{
 		g.fillOval(x, y, Duck.SIZE, Duck.SIZE);
 	}
 	
+	public void fly(Graphics g) {
+		g.drawString("Fly", x, y);
+	}
+	
 };

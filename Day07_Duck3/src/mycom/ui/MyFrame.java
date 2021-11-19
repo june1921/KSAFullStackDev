@@ -17,7 +17,6 @@ public class MyFrame extends JFrame{
 	
 	DuckManager mgr = new DuckManager();
 	
-	
 	Duck[] darr = new Duck[10];
 	
 	public MyFrame() {
